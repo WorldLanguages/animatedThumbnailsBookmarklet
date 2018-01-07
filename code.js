@@ -14,7 +14,6 @@ if(Scratch.INIT_DATA.PROJECT.model.creator==Scratch.INIT_DATA.LOGGED_IN_USER.mod
         file.id = "uploadthumbnail";
         file.setAttribute("type", "file");
         file.setAttribute("accept", "image/*");
-        file.click();
         document.body.appendChild(file);
         document.getElementById("uploadthumbnail").onchange = function() {
             if(document.getElementById('uploadthumbnail').files[0])upload(document.getElementById('uploadthumbnail').files[0]);
@@ -88,7 +87,7 @@ function upload(filelocation) {
 
 function snackBarCSS() {
     var css = document.createElement("style");
-    css.innerHTML = '/* The snackbar - position it at the bottom and in the middle of the screen */ #snackbar { visibility: hidden; /* Hidden by default. Visible on click */ min-width: 250px; /* Set a default minimum width */ margin-left: -125px; /* Divide value of min-width by 2 */ background-color: #333; /* Black background color */ color: #fff; /* White text color */ text-align: center; /* Centered text */ border-radius: 2px; /* Rounded borders */ padding: 16px; /* Padding */ position: fixed; /* Sit on top of the screen */ z-index: 1; /* Add a z-index if needed */ left: 50%; /* Center the snackbar */ top: 50px; /* 30px from the bottom */ } /* Show the snackbar when clicking on a button (class added with JavaScript) */ #snackbar.show { visibility: visible; /* Show the snackbar */';
+    css.innerHTML = '#snackbar { visibility: hidden; min-width: 250px; margin-left: -125px; background-color: black; color: #fff; text-align: center; border-radius: 2px; padding: 16px; position: fixed; z-index: 1; left: 50%; top: 50px; } #snackbar.show { visibility: visible; } ';
     document.head.appendChild(css);
 }
 
