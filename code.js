@@ -5,7 +5,7 @@ if(Scratch.INIT_DATA.PROJECT.model.creator==Scratch.INIT_DATA.LOGGED_IN_USER.mod
     var snackbar = document.createElement("div");
     snackbar.id = "snackbar";
     document.body.appendChild(snackbar);
-    document.getElementById("snackbar").innerHTML = '<a id="selectThumbnailFile">Select an image</a> or drag and drop anywhere on this page.';
+    document.getElementById("snackbar").innerHTML = '<a id="selectThumbnailFile">Select an image</a> or drag and drop anywhere on this page.<br><a onclick="document.getElementById(\'snackbar\').className=\'\';">Close</a>';
     document.getElementById("selectThumbnailFile").onclick = function(){document.getElementById("uploadthumbnail").click();};
     document.getElementById("snackbar").className = "show";
 
@@ -75,7 +75,7 @@ function upload(filelocation) {
                 return xhr;
             },
             success: function(msg) {
-                document.getElementById("snackbar").innerHTML = 'The thumbnail was successfully changed.<br><img src="'+uploadedImage+'" height="108" width="144" style="background-color:white;"><br><a id="selectThumbnailFile">Select another image</a><br><a style="text-align:right;" onclick="document.getElementById(\'snackbar\').className=\'\';">Close</a><br>';
+                document.getElementById("snackbar").innerHTML = 'The thumbnail was successfully changed.<br><img src="'+uploadedImage+'" height="108" width="144" style="background-color:white;"><br><a id="selectThumbnailFile">Select another image</a><br><a onclick="document.getElementById(\'snackbar\').className=\'\';">Close</a>';
                 document.getElementById("selectThumbnailFile").onclick = function(){document.getElementById("uploadthumbnail").click();};
             },
             error: function() {
@@ -93,10 +93,10 @@ function snackBarCSS() {
 
 function error(err) {
     if(String(err).includes("parameter 1 is not of type 'Blob'.")) {
-        document.getElementById("snackbar").innerHTML = 'Error - please upload a downloaded file,<br> not an image from another website.<br><a id="selectThumbnailFile">Select an image</a>';
+        document.getElementById("snackbar").innerHTML = 'Error - please upload a downloaded file,<br> not an image from another website.<br><a id="selectThumbnailFile">Select an image</a><br><a onclick="document.getElementById(\'snackbar\').className=\'\';">Close</a>';
         document.getElementById("selectThumbnailFile").onclick = function(){document.getElementById("uploadthumbnail").click();};
     } else {
-        document.getElementById("snackbar").innerHTML = 'Error - try a smaller image.<br><a id="selectThumbnailFile">Select an image</a>';
+        document.getElementById("snackbar").innerHTML = 'Error - try a smaller image.<br><a id="selectThumbnailFile">Select an image</a><br><a onclick="document.getElementById(\'snackbar\').className=\'\';">Close</a>';
         document.getElementById("selectThumbnailFile").onclick = function(){document.getElementById("uploadthumbnail").click();};
     }
 }
