@@ -76,7 +76,7 @@ function upload(filelocation) {
                 return xhr;
             },
             success: function(msg) {
-                document.getElementById("snackbar").innerHTML = 'Success<br><img src="'+uploadedImage+'" height="108" width="144" style="background-color:white;"><br><a id="selectThumbnailFile">Select another image</a>';
+                document.getElementById("snackbar").innerHTML = 'The thumbnail was successfully changed.<br><img src="'+uploadedImage+'" height="108" width="144" style="background-color:white;"><br><a id="selectThumbnailFile">Select another image</a><br><a style="text-align:right;" onclick="document.getElementById(\'snackbar\').className=\'\';">Close</a><br>';
                 document.getElementById("selectThumbnailFile").onclick = function(){document.getElementById("uploadthumbnail").click();};
             },
             error: function() {
