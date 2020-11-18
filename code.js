@@ -14,7 +14,7 @@ if(parser.hostname === "scratch.mit.edu" && parser.pathname.startsWith("/project
 function animThumbnailMain() {
     snackBarCSS = function() {
         var css = document.createElement("style");
-        css.innerHTML = '#snackbar { visibility: hidden; min-width: 250px; margin-left: -125px; background-color: black; color: #fff; text-align: center; border-radius: 2px; padding: 16px; position: fixed; z-index: 1; left: 50%; top: 50px; } #snackbar.show { visibility: visible; } ';
+        css.innerHTML = '#snackbar { visibility: hidden; min-width: 250px; margin-left: -125px; background-color: black; color: #fff; text-align: center; border-radius: 2px; padding: 16px; position: fixed; z-index: 100; left: 50%; top: 50px; } #snackbar.show { visibility: visible; } ';
         document.head.appendChild(css);
     }
 
